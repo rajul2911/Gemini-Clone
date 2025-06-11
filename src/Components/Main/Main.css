@@ -1,0 +1,249 @@
+
+
+.Main {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #252e3f;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: #585858;
+    
+}
+
+.nav p{
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;    
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav img {
+    width: 40px; 
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.main-container {
+    max-width: 900px;
+    margin-top: -52px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 75px;
+   overflow-y: auto;
+}
+
+.greet{
+    /* margin: -40px 0px; */
+    font-size: 56px;
+    color: #c4c7c5;
+    font-weight: 500;
+    padding: 20px;
+    padding-left: 82px;
+}
+
+span{
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546); 
+    -webkit-background-clip: text;    
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+} 
+.greet p{
+    margin-top: 15px;
+    margin-bottom: 0px;
+}   
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.card{
+    height: 200px;
+    padding: 15px;
+    background-color: #f0f4f9;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.card img{
+        width: 35px;
+        padding: 5px;
+        position: absolute;
+        background-color: white;
+        border-radius: 20px;
+        bottom: 10px;
+        right: 10px;
+}
+
+.card p{
+    color: #585858;
+    font-size: 17px;
+}
+
+.card:hover{
+    background-color: #dfe4ea;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f0f4f9;
+    padding: 10px 20px;
+    border-radius: 50px;
+
+}
+
+.search img{
+    width: 24px;
+    cursor: pointer;
+}
+
+.search input{
+    width: 89%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #585858;
+    background-color: transparent;
+}
+
+.search div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.bottom-info{
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+    color: white;
+}
+
+.result{
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
+
+}
+
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+.result-title{
+    margin: 12px 0px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.result-data{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.result-data img{
+    margin-top: 16px;
+}
+
+.result-data p{
+    line-height: 1.5;
+}
+
+
+.result-data b, 
+.result-data strong {
+  color: #ffb300;
+  font-weight: bold;
+  background: none;
+}
+
+
+
+.result .loader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+.loader hr {
+  border-radius: 4px;
+  border: none;
+  background-color: #f6f7f8;
+  background: linear-gradient(90deg, #9ed7ff 25%, #ffffff 50%, #9ed7ff 75%);
+  background-size: 800px 50px;
+  height: 20px;
+  margin: 8px 0;
+  animation: shimmer 1.5s infinite linear;
+}
+
+
+.result p{
+    color: #fafafa;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .main-bottom input{
+        flex: none;
+        width: 150px;
+    }
+
+    .main-bottom img{
+        width: 20px;
+    }
+    
+    .search{
+        padding: 5px 10px;
+    }
+
+    .search div{
+        gap: 5px;
+    }
+}

@@ -1,0 +1,11 @@
+/* App.css */
+.app-container {
+  display: flex;        
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  line-height: 1.5; /* Try values between 1.1 and 1.3 for tighter spacing */
+}
+
