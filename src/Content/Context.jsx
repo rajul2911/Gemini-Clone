@@ -14,14 +14,12 @@ const ContextProvider = (props) => {
   const [loading, setloading]             = useState(false);
   const [resultdata, setresultdata]       = useState("");
 
-  /* ───────────────────────── helper ───────────────────────── */
   const delayPara = (index, nextword) => {
     setTimeout(() => {
       setresultdata(prev => prev + nextword);
     }, 50 * index);
   };
 
-  /* ───────────────────── main “send” function ───────────────────── */
 
   const newcht=()=>{
     setloading(false);
@@ -29,10 +27,9 @@ const ContextProvider = (props) => {
     setInput("");
   }
   const onsent = async (promptArg) => {
-    /* Accept a prompt coming either from the textbox (input)
-       or from a recent-chat click (promptArg)                  */
+   
     const prompt = promptArg ?? input;
-    if (!prompt.trim()) return;            // nothing to send
+    if (!prompt.trim()) return;            
 
     setresultdata("");
     setloading(true);
@@ -44,7 +41,6 @@ const ContextProvider = (props) => {
     try {
       const raw = await main(prompt);
 
-      /* bold **text** and newlines * → <br/> exactly as before */
       const newResponse = raw
         .split("**")
         .map((chunk, i) => (i % 2 ? `<b>${chunk}</b>` : chunk))
@@ -58,7 +54,6 @@ const ContextProvider = (props) => {
     }
   };
 
-  /* ───────────────────────  new chat  ─────────────────────── */
   const newchat = () => {
     setInput("");
     setrecentprompts("");
